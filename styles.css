@@ -21,6 +21,7 @@ body {
 
 img {
     width: 6rem;
+    background-color: rgb(15, 15, 15);
 }
 
 /* Cards */
@@ -37,7 +38,10 @@ img {
     justify-content: center;
     align-items: center;
 
+    background-image: url("./assets/hidden.webp");
     background-color: rgb(15, 15, 15);
+    background-size: cover;
+    background-position: center;
     border: 2px solid var(--blue);
     border-radius: 0.5rem;
     cursor: pointer;
@@ -45,4 +49,8 @@ img {
 
 .hidden {
     display: none;
+}
+
+.matched {
+    border-color: green;
 }

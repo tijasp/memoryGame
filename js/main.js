@@ -5,20 +5,28 @@ class Card {
         this.isPairFound = false;
     };
 
+    flip(element) {
+        const imgs = element.querySelectorAll("img");
+        imgs.forEach(img => {
+            img.classList.toggle("hidden");
+        });
+    };
 
 };
 
 const pairNames = ["c-plus", "c-sharp", "css", "html", "java", "js", "php", "python"];
 const cards = pairNames.map(name => new Card(name));
 
-console.log(cards)
+const cardDiv = document.querySelectorAll(".card");
 
-const card = document.querySelectorAll(".card");
-card.forEach(card => {
-    card.addEventListener("click", () => {
-        const imgs = card.querySelectorAll("img");
-        imgs.forEach(img => {
-            img.classList.toggle("hidden");
-        });
+cardDiv.forEach(card => {
+    card.addEventListener("click", (e) => {
+
+        console.log("Card flipped: ", cards[e.currentTarget.dataset.index])
+        cards[e.currentTarget.dataset.index].flip(card)
+
+        console.log(cards)
+
+        
     });
 });
