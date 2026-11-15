@@ -50,3 +50,7 @@ img {
 .hidden {
     display: none;
 }
+
+.matched {
+    border-color: rgb(106, 230, 106);
+}

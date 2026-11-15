@@ -7,6 +7,7 @@ class Card {
 
     flip(element) {
         const img = element.querySelector("img");
+
         img.classList.remove("hidden");
         element.classList.add("flipped");
         this.flippedCount += 1;
@@ -14,6 +15,7 @@ class Card {
 
     hide(element) {
         const img = element.querySelector("img");
+
         img.classList.add("hidden");
         element.classList.remove("flipped");
         this.flippedCount = 0;
@@ -21,8 +23,11 @@ class Card {
 
     match(index) {
         this.isMatched = true;
-        const matchedPair = document.querySelectorAll(`.card[data-set='${index}']`)
-        console.log(matchedPair)
+
+        const matchedPair = document.querySelectorAll(`.card[data-index="${index}"]`)
+        matchedPair.forEach(card => {
+            card.classList.add("matched")
+        })
     };
 };
 
@@ -30,6 +35,7 @@ class Game {
     constructor(cards) {
         this.cards = cards;
         this.moves = 0;
+        this.freeze = false;
     };
 
     init() {
@@ -41,12 +47,14 @@ class Game {
         cardDiv.forEach(card => {
             card.addEventListener("click", (e) => {
                 const index = e.currentTarget.dataset.index;
+
+                if (this.freeze) return;
+
                 if (!this.cards[index].isMatched && !e.currentTarget.classList.contains("flipped")) {
                     this.cards[index].flip(card);
                     this.moves += 1;
-                    console.log(this.moves)
                 };
-
+                
                 if (this.moves === 2) this.checkIfMatched(index);
             });
         });
@@ -57,15 +65,25 @@ class Game {
             this.cards[index].match(index);
             console.log("congrats !");
         } else {
+            this.freeze = true;
+
             const flippedCards = document.querySelectorAll(".card.flipped");
-            flippedCards.forEach(card => {
-                card.classList.remove("flipped");
-                const index = card.dataset.index;
-                if (this.cards[index].isMatched) return;
-                this.cards[index].flippedCount = 0;
-                this.cards[index].hide(card);
-            });
+
+            setTimeout(() => {
+                flippedCards.forEach(card => {
+                    card.classList.remove("flipped");
+                    const index = card.dataset.index;
+
+                    if (this.cards[index].isMatched) return;
+
+                    this.cards[index].flippedCount = 0;
+                    this.cards[index].hide(card);
+                });
+
+                this.freeze = false;
+            }, 1000);
         };
+
         this.moves = 0;
     };
 };
