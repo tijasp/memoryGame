@@ -27,26 +27,33 @@ class Game {
     };
 
     init() {
-        this.cardClick()
+        this.cardClickHandler()
     }
 
-    cardClick() {
+    cardClickHandler() {
         const cardDiv = document.querySelectorAll(".card");
         cardDiv.forEach(card => {
             card.addEventListener("click", (e) => {
+                if (e.currentTarget.classList.contains("flipped")) return;
+                e.currentTarget.classList.add("flipped");
 
-                console.log("Card flipped: ", cards[e.currentTarget.dataset.index])
-                cards[e.currentTarget.dataset.index].flip(card)
-
-                console.log("Card Array: ", cards)
+                const index = e.currentTarget.dataset.index;
+                this.cards[index].flip(card);
+                this.moves += 1;
+                if (this.moves === 2) this.checkIfMatched();
             });
         });
 
     };
+
+    checkIfMatched() {
+
+    };
+
+
 };
 
 const pairNames = ["c-plus", "c-sharp", "css", "html", "java", "js", "php", "python"];
-const cards = pairNames.map(name => new Card(name));
-
 const game = new Game(pairNames.map(name => new Card(name)))
+
 game.init()
