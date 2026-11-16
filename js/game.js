@@ -53,8 +53,8 @@ export class Game {
         // After 1s: hide cards, removes the red borders and unfreeze player moves
         setTimeout(() => {
             this.flippedCards.forEach(card => {
-                card.hide();
                 card.element.classList.remove("wrong");
+                card.hide();
             })
             
             // Unfreeze player

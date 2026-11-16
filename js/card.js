@@ -18,11 +18,10 @@ export class Card {
         this.isFlipped = false;
         this.img.classList.add("hidden");
         this.element.classList.remove("flipped");
-        
     };
 
     match() {
         this.isMatched = true;
-        this.element.classList.add("matched")
+        this.element.classList.add("matched");
     };
 };
