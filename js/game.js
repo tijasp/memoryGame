@@ -6,7 +6,21 @@ export class Game {
     };
 
     init() {
+        this.shuffle();
         this.cardClickHandler();
+    };
+
+    shuffle() {
+        // Shuffle DOM with Fisher-Yates algorithm
+        const cardSection = document.querySelector(".cardSection");
+
+        let m = this.cards.length;
+        while (m) {
+            const i = Math.floor(Math.random() * m--);
+            [this.cards[m], this.cards[i]] = [this.cards[i], this.cards[m]];
+        }
+
+        this.cards.forEach(item => cardSection.appendChild(item.element));
     };
 
     cardClickHandler() {
@@ -50,18 +64,18 @@ export class Game {
             card.element.classList.add("wrong");
         })
 
-        // After 1s: removes the red borders and unfreeze player moves
+        // After 1s: hide cards, removes the red borders and unfreeze player moves
         setTimeout(() => {
             this.flippedCards.forEach(card => {
-                card.hide();
                 card.element.classList.remove("wrong");
+                card.hide();
             })
-                
+            
+            // Unfreeze player
             this.freeze = false;
             // Resets Array
             this.flippedCards = [];
         }, 1000);
-    }
-
+    };
 
 };
