@@ -24,16 +24,16 @@ img {
     background-color: rgb(15, 15, 15);
 }
 
-/* Cards */
+/* Cartes */
 
-.cardSection {
+.sectionCartes {
     display: grid;
     grid: repeat(4, 7.5rem) / repeat(4, 7.5rem);
     row-gap: 1rem;
     column-gap: 1rem;
 }
 
-.card {
+.carte {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,10 +47,10 @@ img {
     cursor: pointer;
 }
 
-.hidden {
+.invisible {
     display: none;
 }
 
-.matched {
+.paireTrouvee {
     border-color: rgb(106, 230, 106);
 }
