@@ -1,32 +1,28 @@
 export class Card {
-    constructor(name) {
-        this.name = name;
-        this.flippedCount = 0;
+    constructor(element) {
+        this.element = element;
+        this.img = element.querySelector("img")
+        
+        this.name = element.dataset.name;
+        this.isFlipped = false;
         this.isMatched = false;
     };
 
-    flip(element) {
-        const img = element.querySelector("img");
-
-        img.classList.remove("hidden");
-        element.classList.add("flipped");
-        this.flippedCount += 1;
+    flip() {
+        this.isFlipped = true;
+        this.img.classList.remove("hidden");
+        this.element.classList.add("flipped");
     };
 
-    hide(element) {
-        const img = element.querySelector("img");
-
-        img.classList.add("hidden");
-        element.classList.remove("flipped");
-        this.flippedCount = 0;
+    hide() {
+        this.isFlipped = false;
+        this.img.classList.add("hidden");
+        this.element.classList.remove("flipped");
+        
     };
 
-    match(index) {
+    match() {
         this.isMatched = true;
-
-        const matchedPair = document.querySelectorAll(`.card[data-index="${index}"]`)
-        matchedPair.forEach(card => {
-            card.classList.add("matched")
-        })
+        this.element.classList.add("matched")
     };
 };

@@ -1,7 +1,9 @@
 import { Card } from "./card.js";
 import { Game } from "./game.js";
 
-const pairNames = ["c-plus", "c-sharp", "css", "html", "java", "js", "php", "python"];
-const game = new Game(pairNames.map(name => new Card(name)));
+const cardDivs = document.querySelectorAll(".card");
 
-game.init();
+const cards = Array.from(cardDivs).map((element) => { return new Card(element) });
+const game = new Game(cards);
+
+game.init()

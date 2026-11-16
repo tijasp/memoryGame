@@ -51,6 +51,14 @@ img {
     display: none;
 }
 
+.flipped {
+    border-color: #ffffff;
+}
+
+.wrong {
+    border-color: rgb(248, 82, 82);
+}
+
 .matched {
     border-color: rgb(106, 230, 106);
 }

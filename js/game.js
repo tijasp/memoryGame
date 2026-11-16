@@ -1,56 +1,67 @@
 export class Game {
     constructor(cards) {
         this.cards = cards;
-        this.moves = 0;
         this.freeze = false;
+        this.flippedCards = [];
     };
 
     init() {
         this.cardClickHandler();
-    }
+    };
 
     cardClickHandler() {
-        const cardDiv = document.querySelectorAll(".card");
-        cardDiv.forEach(card => {
-            card.addEventListener("click", (e) => {
-                const index = e.currentTarget.dataset.index;
+        // Add a "click" eventListener to all card of this.cards array
+        this.cards.forEach(card => {
+            card.element.addEventListener("click", () => {
+                // Ignore if player is frozen or the clicked card is already flipped/matched
+                if (this.freeze 
+                    || card.isFlipped 
+                    || card.isMatched) return;
 
-                if (this.freeze) return;
+                card.flip();
+                // Save the flipped card in an Array
+                this.flippedCards.push(card);
 
-                if (!this.cards[index].isMatched && !e.currentTarget.classList.contains("flipped")) {
-                    this.cards[index].flip(card);
-                    this.moves += 1;
-                };
-                
-                if (this.moves === 2) this.checkIfMatched(index);
+                // If 2 flipped cards in the Array, calls verifyMatch()
+                if (this.flippedCards.length === 2) this.verifyMatch();
             });
         });
     };
 
-    checkIfMatched(index) {
-        if (this.cards[index].flippedCount === 2) {
-            this.cards[index].match(index);
-            console.log("congrats !");
+    verifyMatch() {
+        // Checks of the flipped cards have the same name
+        if (this.flippedCards[0].name === this.flippedCards[1].name) {
+            this.flippedCards.forEach(card => {
+                card.match();
+            })
+            // Resets Array
+            this.flippedCards = [];
         } else {
-            this.freeze = true;
-
-            const flippedCards = document.querySelectorAll(".card.flipped");
-
-            setTimeout(() => {
-                flippedCards.forEach(card => {
-                    card.classList.remove("flipped");
-                    const index = card.dataset.index;
-
-                    if (this.cards[index].isMatched) return;
-
-                    this.cards[index].flippedCount = 0;
-                    this.cards[index].hide(card);
-                });
-
-                this.freeze = false;
-            }, 1000);
+            this.badGuess();
         };
-
-        this.moves = 0;
     };
+
+    badGuess() {
+        // Freeze player moves
+        this.freeze = true
+
+        // Add red borders to flipped cards
+        this.flippedCards.forEach(card => {
+            card.element.classList.add("wrong");
+        })
+
+        // After 1s: removes the red borders and unfreeze player moves
+        setTimeout(() => {
+            this.flippedCards.forEach(card => {
+                card.hide();
+                card.element.classList.remove("wrong");
+            })
+                
+            this.freeze = false;
+            // Resets Array
+            this.flippedCards = [];
+        }, 1000);
+    }
+
+
 };

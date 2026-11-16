@@ -10,7 +10,7 @@ https://tijasp.github.io/memoryGame/
 ## ⚙️ Used technologies
 
 - **HTML5** - Game structure.
-- **CSS3** - Styling and card flip animations.
+- **CSS3** - Styling.
 - **JavaScript** - Game logic and Object-Oriented Programming (OOP).
 
 ## 🎯 Learning objectives
