@@ -1,46 +1,46 @@
-# 🧠 Jeu de Memory
+# 🧠 Memory Game
 
-Jeu de memory, développé en JavaScript, pour apprendre la programmation orientée objet (POO) et apprendre à utiliser les classes en JavaScript.
+A classic Memory game built with JavaScript to practice Object-Oriented Programming (OOP) and learn how to use JavaScript classes.
 
-L'objectif est de retrouver toutes les paires correspondantes en retournant deux cartes à la fois.
+The goal is to find all matching pairs by flipping two cards at a time.
 
-## ⚡ Démo en ligne
+## ⚡ Live demo
 https://tijasp.github.io/memoryGame/
 
-## ⚙️ Technologies utilisées
+## ⚙️ Used technologies
 
-- **HTML5** - Structure du jeu.
-- **CSS3** - Mise en forme.
-- **JavaScript** - Logique du jeu et programmation orientée objet (POO).
+- **HTML5** - Game structure.
+- **CSS3** - Styling.
+- **JavaScript** - Game logic and Object-Oriented Programming (OOP).
 
-## 🎯 Objectifs
+## 🎯 Learning objectives
 
-Ce projet a été réalisé pour s'entraîner et mieux comprendre :
+This project was created to practice and better understand:
 
-- **Classes et objets** - Création et gestion d'objets via les classes JavaScript.
-- **Constructeurs** - Initialisation des objets et de leurs propriétés.
-- **Méthodes** - Définition des comportements des différents objets.
-- **Programmation orientée objet (POO)** - Structuration du code à l'aide de composants organisés et réutilisables.
-- **Manipulation du DOM** - Mise à jour de l'interface en fonction des événements du jeu.
+- **Classes & Objects** - Creating and managing objects using JavaScript classes.
+- **Constructors** - Initializing objects and their properties.
+- **Methods** - Defining behaviors for different objects.
+- **Object-Oriented Programming (OOP)** - Structuring code using reusable and organized components.
+- **DOM Manipulation** - Updating the interface based on game events.
 
-## 🚀 Pour commencer
+## 🚀 Getting started
 
-#### 1. Cloner le dépôt
+#### 1. Clone the repository
 
 `git clone https://github.com/tijasp/memoryGame.git`
 
-#### 2. Ouvrir le projet
+#### 2. Open the project
 
-Accédez au répertoire du projet :
+Navigate to the project directory:
 
 `cd memoryGame`
 
-#### 3. Lancer le projet
+#### 3. Run the project
 
-Utilisez un serveur de développement local, comme l'extension « Live Server » dans Visual Studio Code.
+Use a local development server such as the Live Server extension in Visual Studio Code.
 
-## ⓘ Auteur
+## ⓘ Author
 
 **Tijasp**
 
-> Étudiant en développement web Fullstack
+> Fullstack Web Development Student
