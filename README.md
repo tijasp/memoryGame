@@ -4,6 +4,9 @@ A classic Memory game built with JavaScript to practice Object-Oriented Programm
 
 The goal is to find all matching pairs by flipping two cards at a time.
 
+## ⚡ Live demo
+https://tijasp.github.io/memoryGame/
+
 ## ⚙️ Used technologies
 
 - **HTML5** - Game structure.
