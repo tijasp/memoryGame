@@ -6,4 +6,4 @@ const cardDivs = document.querySelectorAll(".card");
 const cards = Array.from(cardDivs).map((element) => { return new Card(element) });
 const game = new Game(cards);
 
-game.cardClickHandler()
+game.init()
