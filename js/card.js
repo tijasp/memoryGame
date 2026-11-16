@@ -1,7 +1,8 @@
 export class Card {
-    constructor(name) {
+    constructor(name, index) {
         this.name = name;
-        this.flippedCount = 0;
+        this.index = index;
+        this.isFlipped = false;
         this.isMatched = false;
     };
 
