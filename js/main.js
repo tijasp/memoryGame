@@ -1,4 +1,5 @@
 import { Card } from "./card.js";
+import { Game } from "./game.js";
 
 const pairs = [
     "c-plus",
@@ -11,7 +12,9 @@ const pairs = [
     "python"
 ];
 
+const rootContainer = document.querySelector("main");
 const cards = [];
+const game = new Game(rootContainer, cards)
 
 // Push 2 cards per pair name into "cards" array
 pairs.forEach(pair => {
@@ -20,4 +23,8 @@ pairs.forEach(pair => {
     };
 });
 
-console.log(cards);
+const startButton = document.getElementById("start");
+startButton.addEventListener("click", () => {
+    game.start();
+    
+});
