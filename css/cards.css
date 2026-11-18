@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
 
-    background-image: url("./assets/hidden.webp");
+    background-image: url("../assets/hidden.webp");
     background-color: var(--card-background-color);
     background-size: cover;
     background-position: center;
@@ -13,7 +13,7 @@
 }
 
 .hidden {
-    display: normal;
+    display: none;
 }
 
 .flipped {
