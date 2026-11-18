@@ -13,9 +13,8 @@ const pairs = [
     "python"
 ];
 
-const rootContainer = document.querySelector("main");
 const cards = [];
-const game = new Game(rootContainer, cards)
+const game = new Game(cards)
 
 // Push 2 cards per pair name into "cards" array
 pairs.forEach(pair => {
@@ -24,4 +23,4 @@ pairs.forEach(pair => {
     };
 });
 
-game.start(rootContainer, cards);
+game.start();

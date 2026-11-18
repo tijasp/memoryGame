@@ -1,9 +1,4 @@
 export class UserInterface {
-
-    constructor(container) {
-        this.container = container;
-    };
-
     render(cards) {
         cards.forEach(card => {
             card.element.classList.add("card");
