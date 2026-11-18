@@ -1,0 +1,57 @@
+@import url("./cards.css");
+
+:root {
+    --background-color: #202029;
+    --card-background-color: #0f0f0f;
+    --blue: #5782f9;
+    --red: #f85252;
+    --green: #6ae66a;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Ubuntu";
+    background-color: var(--background-color);
+}
+
+img {
+    width: 6rem;
+    background-color: var(--card-background-color);
+}
+
+button {
+    padding: 0.5rem 1rem;
+
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--white);
+    background-color: var(--blue);
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+button:hover {
+    color: var(--blue);
+    background-color: var(--white);
+}
+
+/* Sections */
+
+.cardSection {
+    display: grid;
+    grid: repeat(4, 7.5rem) / repeat(4, 7.5rem);
+    row-gap: 1rem;
+    column-gap: 1rem;
+}
