@@ -1,6 +1,7 @@
 import { Card } from "./card.js";
 import { Game } from "./game.js";
 
+// Configure all pair names
 const pairs = [
     "c-plus",
     "c-sharp",
@@ -23,8 +24,4 @@ pairs.forEach(pair => {
     };
 });
 
-const startButton = document.getElementById("start");
-startButton.addEventListener("click", () => {
-    game.start(rootContainer, cards);
-
-});
+game.start(rootContainer, cards);

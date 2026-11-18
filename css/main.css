@@ -55,6 +55,7 @@ img {
 
 #statsSection,
 #buttonSection {
+    margin: 2rem auto;
     display: flex;
     justify-content: center;
     gap: 10%;
