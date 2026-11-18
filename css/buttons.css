@@ -1,0 +1,10 @@
+#start {
+    font-size: 2rem;
+    color: var(--white);
+    background-color: var(--blue);
+}
+
+#start:hover {
+    color: var(--blue);
+    background-color: var(--white);
+}
