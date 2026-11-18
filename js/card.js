@@ -3,7 +3,7 @@ export class Card {
         this.name = name;
         this.isFlipped = false;
         this.isMatched = false;
-        this.element = null;
+        this.element = document.createElement("div");
     };
 
     flip() {
