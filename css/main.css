@@ -1,3 +1,4 @@
+@import url("cards.css");
 @import url("buttons.css");
 
 :root {
@@ -32,14 +33,26 @@ body {
 
 button {
     padding: 0.5rem 1rem;
-
     font-weight: 900;
     border: none;
     border-radius: 0.25rem;
     cursor: pointer;
 }
 
+img {
+    width: 75%;
+    padding: 0.5rem;
+    background-color: var(--card-background-color);
+}
+
 /* Sections */
+#cardSection {
+    display: grid;
+    grid: repeat(4, 7.5rem) / repeat(4, 7.5rem);
+    row-gap: 1rem;
+    column-gap: 1rem;
+}
+
 #statsSection,
 #buttonSection {
     display: flex;

@@ -1,0 +1,29 @@
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url("./assets/hidden.webp");
+    background-color: var(--card-background-color);
+    background-size: cover;
+    background-position: center;
+    border: 2px solid var(--blue);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.hidden {
+    display: normal;
+}
+
+.flipped {
+    border-color: var(--white);
+}
+
+.wrong {
+    border-color: var(--red);
+}
+
+.matched {
+    border-color: var(--green);
+}

@@ -25,6 +25,6 @@ pairs.forEach(pair => {
 
 const startButton = document.getElementById("start");
 startButton.addEventListener("click", () => {
-    game.start();
-    
+    game.start(rootContainer, cards);
+
 });
